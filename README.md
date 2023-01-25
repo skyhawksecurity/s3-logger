@@ -1,7 +1,7 @@
 # Skyhawk Security SYN S3 Logger
 #### _A Log Source for SIEM Tools, etc._
 
-This open source AWS tool was designed to consume the detected security findings from Skyhawk Security SYN and then write compressed files to AWS S3. From there, SIEM tools, such as IBM QRadar, or any other tool which supports S3, can ingest the CNP findings. If necessary, the findings from Skyhawk Security SYN may be reformatted in the script to meet the data model requirements of any downstream tool.
+This open source AWS tool was designed to consume the detected security findings from Skyhawk Security SYN and then write compressed files to AWS S3. From there, SIEM tools, such as IBM QRadar, or any other tool which supports S3, can ingest the Skyhawk Security SYN findings. If necessary, the findings from Skyhawk Security SYN may be reformatted in the script to meet the data model requirements of any downstream tool.
 
 The CFT deployment process will create an SNS Topic, SQS Queue, an IAM Role, CloudWatch Log Group (default 90 days retention), and a Lambda Function. On the defined schedule, SQS messages are polled and then written to an S3 bucket. Additional triggers and schedules can be configured post-deployment as desired. 
 
@@ -26,7 +26,7 @@ This CFT stack has 5 parameters, 4 of which are configured during deployment:
 1. Click **Next** twice.
 1. Under **Capabilities and transforms**, click to check the **3** pending acknowledgements: "_I acknowledge..._".
 1. Click **Create stack**.
-1. After the process finished view the **Outputs** tab. The **InputTopicARN** value will be needed for the next step in the CNP console.
+1. After the process finished view the **Outputs** tab. The **InputTopicARN** value will be needed for the next step in the Skyhawk Security SYN console.
 
 ### [Option 2] Manual CFT Deployment:
 1. Download the contents of this repo.

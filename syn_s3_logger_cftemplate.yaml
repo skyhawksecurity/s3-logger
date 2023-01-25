@@ -32,7 +32,7 @@ Parameters:
     Default: 'true'
     Description: 'REQUIRED - Enable/disable gzip compression of log files. true/false'
     Type: String
-  CNPAccountId:
+SYNAccountId:
     Description: The automated response Skyhawk Security account ID to send publish notifications to. specified at the portal under Settings -> Cloud Accounts -> (Automated response) Activate
     AllowedPattern: '[0-9]*'
     MinLength: '12'
@@ -52,7 +52,7 @@ Resources:
           Effect: Allow
           Principal:
             #AWS: arn:aws:iam::342443945406:root
-            AWS: !Join [ '' , [ 'arn:aws:iam::' , !Ref CNPAccountId , ':root'] ]
+            AWS: !Join [ '' , [ 'arn:aws:iam::' , !Ref SYNAccountId , ':root'] ]
           Resource:
             Ref: InputTopic
           Sid: CwpSnsPolicy
